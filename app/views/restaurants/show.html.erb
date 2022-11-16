@@ -8,16 +8,16 @@
 
   <% @restaurant.reviews.each do |review| %>
   <p><%= review.content %> - <%= review.created_at %>
-  <%= link_to "delete review", review_path(review),
+  <%= link_to "delete review", review_path(review), class: "btn btn-danger",
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></p>
 <% end %>
 
 
   <div>
-    <%= link_to "Back to restaurants", restaurants_path %>
-    <%= link_to "Leave a review", new_restaurant_review_path(@restaurant)  %>
-
-    <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
+    <%= link_to "Back to restaurants", restaurants_path, class: "btn btn-secondary" %>
+    <%= link_to "Leave a review", new_restaurant_review_path(@restaurant), class: "btn btn-primary"  %>
   </div>
 
 </div>
+
+<%# <%= f.button :submit, class: "btn btn-warning" %>
